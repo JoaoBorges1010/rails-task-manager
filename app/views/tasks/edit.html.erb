@@ -1,5 +1,8 @@
-<div class="container text-center">
+<div class="container mt-5">
   <h1><%= @task.title %></h1>
   <%= render "/shared/form", task: @task %>
-  <button class="button-link"><%= link_to "Back to List", tasks_path(@task) %></button>
+  <hr>
+  <%= link_to tasks_path do %>
+    <i class="fa-solid fa-arrow-rotate-left"></i> Back to list
+  <% end %>
 </div>

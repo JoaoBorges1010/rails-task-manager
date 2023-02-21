@@ -1,11 +1,22 @@
-<div class="container">
-  <div class="text-center">
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
     <h1><%= @task.title %></h1>
-    <%= @task.details %>
-    <div>
-      <button class="button-link"><%= link_to "Delete", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"}%></button>
-      <button class="button-link"><%= link_to "Edit", edit_task_path(@task) %></button>
-      <button class="button-link"><%= link_to "Back to List", tasks_path(@task) %></button>
-    </div>
+    <%= link_to edit_task_path(@task.id), class: 'button-link' do %>
+      <i class="fa fa-pencil"></i> Edit
+    <% end %>
   </div>
+  <p><%= @task.details %></p>
+
+  <% if @task.completed %>
+    <i class="fa-solid fa-check"></i>  completed
+  <% else %>
+    <i class="fa-solid fa-xmark"></i>  not completed yet
+  <% end %>
+  <%= link_to task_path(@task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{@task.title}?"} do %>
+    <i class="fa-regular fa-trash-can"></i> Delete
+  <% end %>
+  <hr>
+  <%= link_to tasks_path do %>
+    <i class="fa-solid fa-arrow-rotate-left"></i> Back to list
+  <% end %>
 </div>

@@ -1,15 +1,18 @@
-<div class="container">
-  <div class="text-center">
-    <%= form_with model: task do |f| %>
+<%= form_with model: task do |f| %>
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :details %>
-    <%= f.text_field :details %>
-    <% unless f.object.new_record? %>
-      <%= f.check_box :completed, class: "checkbox" %>
-    <% end %>
-    <%= f.submit class: "button-link" %>
-    <% end %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
-
-</div>
+  <div class="form-group">
+    <%= f.label :details %>
+    <%= f.text_field :details, class: 'form-control'%>
+  </div>
+    <% unless f.object.new_record? %>
+      <div class="checkbox"> Mark as completed
+        <label>
+        <%= f.check_box :completed %>
+        </label>
+      </div>
+    <% end %>
+    <%= f.submit class: "button-link mt-1" %>
+<% end %>
