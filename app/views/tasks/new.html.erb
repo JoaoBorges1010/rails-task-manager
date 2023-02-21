@@ -1,2 +1,5 @@
-<%= render "/shared/form", task: @task %>
-<button class="button-link"><%= link_to "Back to List", tasks_path(@task) %></button>
+<div class="container text-center">
+  <h1>Create a Task</h1>
+  <%= render "/shared/form", task: @task %>
+  <button class="button-link"><%= link_to "Back to List", tasks_path(@task) %></button>
+</div>
