@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="text-center">
+    <h1>My Tasks</h1>
+
+    <div>
+      <ul>
+        <% @tasks.each do |task| %>
+        <li><%= link_to task.title, task_path(task) %>     <%= task.completed ? "✅" : "❎"%></li>
+        <% end %>
+        </ul>
+        <button class="button-link"><%= link_to "New Task", new_task_path %></button>
+    </div>
+
+  </div>
+</div>

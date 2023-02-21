@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300;0,400;1,300&family=Unbounded:wght@300;400;500;600&display=swap');
+
+body {
+  background-color: rgb(232, 232, 232);
+  font-family: 'Shantell Sans', cursive;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color:darkgray;
+}
+.button-link{
+  border-radius: 10px;
+  background-color: darkgray;
+  border: 0px;
+  padding: 16px;
+}
+
+li {
+  list-style-type: none;
+}
+
